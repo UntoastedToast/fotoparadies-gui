@@ -90,9 +90,17 @@ class FotoparadiesStatus:
         Returns:
             dict[str, Union[str, int, float, None]]: Den Auftragszustand.
         """
-
         requesturl = f"https://spot.photoprintit.com/spotapi/orderInfo/forShop"
         parameters = {"config": config, "shop": shop, "order": order}
-        request = requests.get(requesturl, params=parameters)
-
-        return request.json()
+        try:
+            request = requests.get(requesturl, params=parameters)
+            request.raise_for_status()  # Raise an exception for bad status codes
+            return request.json()
+        except (requests.RequestException, ValueError) as e:
+            # Return a default status if the request fails
+            return {
+                "orderNo": order,
+                "summaryStateCode": "ERROR",
+                "summaryDate": datetime.now().isoformat(),
+                "summaryPriceText": "N/A"
+            }

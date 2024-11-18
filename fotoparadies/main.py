@@ -9,6 +9,7 @@ from rich.console import Console
 from rich.table import Table
 from platformdirs import user_config_dir
 from pathlib import Path
+import sys
 
 app = typer.Typer()
 console = Console()
@@ -162,4 +163,9 @@ def cleanup():
 
 
 if __name__ == "__main__":
-    app()
+    # Check if --gui flag is provided
+    if len(sys.argv) > 1 and sys.argv[1] == "--gui":
+        from .gui import main
+        main()
+    else:
+        app()
