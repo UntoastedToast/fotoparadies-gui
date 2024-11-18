@@ -4,7 +4,33 @@
 
 ![](https://github.com/hija/fotoparadies/raw/main/doc/img/01_status.png)
 
-## Installation
+## Neue GUI Version! 🖥️
+
+Neben der Terminal-Version gibt es jetzt auch eine benutzerfreundliche GUI-Version! Die wichtigsten Neuerungen:
+
+- 🖱️ Einfache Bedienung per Mausklick
+- 🎯 Übersichtliche Darstellung aller Aufträge
+- ➕ Aufträge über ein Formular hinzufügen
+- 🔄 Automatische Status-Aktualisierung
+- 🗑️ Aufträge mit einem Klick entfernen
+- 💾 Standalone-Executable für Windows verfügbar
+
+### Starten der GUI
+
+Du hast zwei Möglichkeiten, die GUI-Version zu starten:
+
+1. **Mit Poetry (für Entwickler):**
+```bash
+poetry run fotoparadies-gui
+```
+
+2. **Als Windows-Executable:**
+   - Lade dir die neueste Version der `fotoparadies.exe` aus dem [Releases](https://github.com/UntoastedToast/fotoparadies-gui/releases)-Bereich herunter
+   - Führe die heruntergeladene `fotoparadies.exe` aus
+
+## Terminal Version
+
+### Installation
 Am einfachsten installierst du das Tool mit pip:
 
 `pip install fotoparadies`
@@ -12,7 +38,7 @@ Am einfachsten installierst du das Tool mit pip:
 Danach öffnest du ein neues Terminal / CMD / Shell / ... Fenster und kannst den `fotoparadies`-Befehl verwenden.
 Beispiele findest du im folgenden:
 
-## Funktionsweise
+### Funktionsweise
 1. **Neue Aufträge hinzufügen**
    
     Ein neuer Auftrag wird hinzugefügt, indem das Tool mit `fotoparadies add [Filial-Nummer] [Auftragsnummer] (Name)` aufgerufen wird.
